@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="180dp"
+    android:layout_height="240dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Destination Image -->
+        <ImageView
+            android:id="@+id/destinationImage2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_corners"/>
+
+        <!-- Destination Name (Overlay) -->
+        <TextView
+            android:id="@+id/destinationName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:layout_margin="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <!-- Price Section -->
+        <TextView
+            android:id="@+id/destinationPrice2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starting at"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/destinationImage2"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/destinationPriceValue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹44,900"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/destinationPrice2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

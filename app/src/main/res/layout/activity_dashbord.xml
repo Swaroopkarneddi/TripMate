@@ -148,7 +148,7 @@
                 android:textStyle="bold"
                 android:textSize="22sp"
                 android:layout_marginBottom="16dp" />
-
+            <!-- Images of Destinations -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewDestinations"
                 android:layout_width="match_parent"
@@ -156,51 +156,57 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="16dp"
                 android:overScrollMode="never"/>
-
-
-            <!-- Images of Destinations -->
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"><ImageView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                android:src="@drawable/kerala"-->
-<!--                android:contentDescription="Kerala"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:layout_marginBottom="16dp"-->
-<!--                android:padding="8dp" />-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Kerrala"/>-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="200dp"-->
-<!--                    android:src="@drawable/dubai"-->
-<!--                    android:contentDescription="Dubai"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:layout_marginBottom="16dp"-->
-<!--                    android:padding="8dp" />-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Dubai"/>-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="200dp"-->
-<!--                    android:src="@drawable/kashmir"-->
-<!--                    android:contentDescription="Kashmir"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:layout_marginBottom="32dp"-->
-<!--                    android:padding="8dp" />-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Kashmir"/></LinearLayout>-->
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Now @1:Lock your Holiday Pack..."
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginBottom="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lock the price of holiday package JUST Rs1 if your unsure about your trip"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/gray"
+                android:layout_marginBottom="4dp"/>
+            <!-- Images of Destinations -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDestinations2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exclusive Deals"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewExclusiveDeals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>

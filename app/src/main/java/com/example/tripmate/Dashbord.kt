@@ -27,5 +27,33 @@ class Dashbord : AppCompatActivity() {
         )
 
         recyclerView.adapter = DestinationAdapter(destinations)
+
+        val recyclerView2 = findViewById<RecyclerView>(R.id.recyclerViewDestinations2)
+        recyclerView2.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        val destinations2 = listOf(
+            Destination("Kerala", R.drawable.kerala),
+            Destination("Dubai", R.drawable.dubai),
+            Destination("Kerala", R.drawable.kerala),
+            Destination("Dubai", R.drawable.dubai),Destination("Kerala", R.drawable.kerala),
+            Destination("Dubai", R.drawable.dubai),Destination("Kerala", R.drawable.kerala),
+            Destination("Dubai", R.drawable.dubai),Destination("Kerala", R.drawable.kerala),
+            Destination("Dubai", R.drawable.dubai),
+            Destination("Kashmir", R.drawable.kashmir)
+        )
+        val recyclerView3: RecyclerView = findViewById(R.id.recyclerViewExclusiveDeals)
+
+
+        val exclusiveDeals = listOf(
+            Destination2("Bali", R.drawable.kerala, "₹39,900"),
+            Destination2("Singapore", R.drawable.dubai, "₹54,500"),
+            Destination2("Japan", R.drawable.kashmir, "₹1,45,000"),
+            Destination2("Australia", R.drawable.kashmir, "₹1,30,000")
+        )
+        recyclerView3.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView3.adapter = DestinationAdapter2(exclusiveDeals)
+
+        recyclerView2.adapter = DestinationAdapter(destinations2)
     }
 }
