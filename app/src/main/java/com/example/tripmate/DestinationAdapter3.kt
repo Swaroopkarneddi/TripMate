@@ -8,28 +8,32 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DestinationAdapter2(private val destinations: List<Destination2>) :
-    RecyclerView.Adapter<DestinationAdapter2.DestinationViewHolder2>() {
+class DestinationAdapter3(private val destinations: List<Destination3>) :
+    RecyclerView.Adapter<DestinationAdapter3.DestinationViewHolder3>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder2 {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder3 {
+        // Inflate the item layout (item_destination3.xml) for each grid item
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_destination2, parent, false)
-        return DestinationViewHolder2(view)
+        return DestinationViewHolder3(view)
     }
 
-    override fun onBindViewHolder(holder: DestinationViewHolder2, position: Int) {
+    override fun onBindViewHolder(holder: DestinationViewHolder3, position: Int) {
+        // Get the destination for the current position
         val destination = destinations[position]
+
+        // Set the destination name, image, and price in the respective views
         holder.destinationName.text = destination.name
         holder.destinationImage.setImageResource(destination.imageResId)
         holder.destinationPriceValue.text = destination.price
 
-        // Handle click event to open TravelPlane Activity
+        // Set up the click listener for the item
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, TravelPlan::class.java).apply {
+                // Pass data to the TravelPlan activity when an item is clicked
                 putExtra("destinationName", destination.name)
                 putExtra("destinationPrice", destination.price)
-                // You can also pass more details like the image if needed
                 putExtra("destinationImageResId", destination.imageResId)
             }
             context.startActivity(intent)
@@ -38,7 +42,8 @@ class DestinationAdapter2(private val destinations: List<Destination2>) :
 
     override fun getItemCount(): Int = destinations.size
 
-    class DestinationViewHolder2(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    // ViewHolder class for the destination item
+    class DestinationViewHolder3(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val destinationImage: ImageView = itemView.findViewById(R.id.destinationImage2)
         val destinationName: TextView = itemView.findViewById(R.id.destinationName2)
         val destinationPriceValue: TextView = itemView.findViewById(R.id.destinationPriceValue2)
