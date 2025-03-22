@@ -18,19 +18,146 @@
             android:id="@+id/tvDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Day 1"
+            android:text=""
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/black" />
-
         <TextView
             android:id="@+id/tvPlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Plan details..."
+            android:text=""
             android:textSize="16sp"
-            android:textColor="@android:color/darker_gray"
             android:layout_marginTop="4dp" />
-    </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvflighhtPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flight"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+            <TextView
+                android:id="@+id/tvflightPlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvflightPlan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTransferPlan"
+                android:text="Transfer"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/tvTransferPlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/darker_gray"
+                android:text=""
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvTransferPlan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHotelPlan"
+                android:text="Hotel"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/tvHotelPlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvHotelPlan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvActivityPlan"
+                android:text="Activity"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/tvActivityPlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvActivityPlan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvMenuePlan"
+                android:text="Food"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/tvMenuePlan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvMenuePlan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
