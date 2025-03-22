@@ -6,14 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp">
+    app:cardElevation="8dp"
+    android:background="@drawable/card_background">
 
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/tvDay"
             android:layout_width="wrap_content"
@@ -29,18 +29,30 @@
             android:text=""
             android:textSize="16sp"
             android:layout_marginTop="4dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/tvflighhtPlan"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Flight"
-                android:textSize="16sp"
-                android:layout_marginTop="4dp" />
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Flight Icon"
+                    android:paddingEnd="8dp"/>
+                <TextView
+                    android:id="@+id/tvflighhtPlan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/tvflightPlan2"
                 android:layout_width="wrap_content"
@@ -60,6 +72,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Flight Icon"
+                    android:paddingEnd="8dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,6 +89,8 @@
                 android:text="Transfer"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
             <TextView
                 android:id="@+id/tvTransferPlan2"
                 android:layout_width="wrap_content"
@@ -86,6 +110,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Flight Icon"
+                    android:paddingEnd="8dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,6 +127,7 @@
                 android:text="Hotel"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
+            </LinearLayout>
             <TextView
                 android:id="@+id/tvHotelPlan2"
                 android:layout_width="wrap_content"
@@ -112,6 +147,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Flight Icon"
+                    android:paddingEnd="8dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,6 +164,8 @@
                 android:text="Activity"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/tvActivityPlan2"
                 android:layout_width="wrap_content"
@@ -138,6 +185,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/flight"
+                    android:contentDescription="Flight Icon"
+                    android:paddingEnd="8dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -145,6 +202,7 @@
                 android:text="Food"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
+            </LinearLayout>
             <TextView
                 android:id="@+id/tvMenuePlan2"
                 android:layout_width="wrap_content"
