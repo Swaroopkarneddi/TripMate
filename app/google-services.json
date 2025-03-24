@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "354716364555",
+    "project_id": "tripmate-ko302",
+    "storage_bucket": "tripmate-ko302.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354716364555:android:185c4d1df3d6f9b7d67c0e",
+        "android_client_info": {
+          "package_name": "com.example.tripmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS0DpDo2o2Olk1qNH0dc29WEaHTjq_S1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
