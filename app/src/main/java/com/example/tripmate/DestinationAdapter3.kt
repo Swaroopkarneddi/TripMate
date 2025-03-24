@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DestinationAdapter3(private val destinations: List<Destination3>) :
+class DestinationAdapter3(private val destinations: List<Destination3>, private val destinationName: String?) :
     RecyclerView.Adapter<DestinationAdapter3.DestinationViewHolder3>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder3 {
@@ -32,9 +32,10 @@ class DestinationAdapter3(private val destinations: List<Destination3>) :
             val context = holder.itemView.context
             val intent = Intent(context, TravelPlan::class.java).apply {
                 // Pass data to the TravelPlan activity when an item is clicked
-                putExtra("destinationName", destination.name)
-                putExtra("destinationPrice", destination.price)
-                putExtra("destinationImageResId", destination.imageResId)
+                putExtra("packageName", destination.name)
+                putExtra("packagePrice", destination.price)
+                putExtra("packageImageResId", destination.imageResId)
+                putExtra("destinationName", destinationName)
             }
             context.startActivity(intent)
         }

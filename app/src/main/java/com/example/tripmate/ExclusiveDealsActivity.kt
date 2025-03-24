@@ -28,7 +28,7 @@ class ExclusiveDealsActivity : AppCompatActivity() {
         val destinationImageRes = intent.getIntExtra("destinationImageRes", 0)
 
         lifecycleScope.launch {
-            var packageList = runGemini(destinationName)
+            var packageList = GeminiRunner.getPackages(destinationName)
             packageList = packageList.substring(7, packageList.length - 4)
 
             val listType = object : TypeToken<List<Package>>() {}.type
@@ -45,31 +45,10 @@ class ExclusiveDealsActivity : AppCompatActivity() {
             }
 
             // Create and set the adapter
-            val adapter = DestinationAdapter3(destinations)
+            val adapter = DestinationAdapter3(destinations, destinationName)
             destinationRecyclerView.adapter = adapter
         }
     }
 
-    suspend fun runGemini(destinationName: String?): String {
-        val prompt =
-            "data class Destination2(val name: String, val imageResId: Int, val price: String) this is my data class, I want data in this format, leave imageResId for all the different packages available for location $destinationName, give me only the package name and prices as a json object no other text also price should be in INR, give me just the json and no other text"
-        val generativeModel = GenerativeModel(
-            modelName = "gemini-1.5-pro",
-            apiKey = "AIzaSyCjAivvfgZa2_UG5Vs3P_sAdxtUmllQE8U"
-        )
 
-        val promptContent = content {
-            text(prompt)
-        }
-
-        try {
-            val response: GenerateContentResponse = generativeModel.generateContent(promptContent)
-            Toast.makeText(this, response.text, Toast.LENGTH_SHORT).show()
-            return response.text.toString()
-        } catch (e: Exception) {
-            Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            Log.e("error", e.message.toString())
-            return e.message.toString()
-        }
-    }
 }
