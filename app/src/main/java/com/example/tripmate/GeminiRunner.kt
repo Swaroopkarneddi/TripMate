@@ -1,7 +1,6 @@
 package com.example.tripmate
 
 import android.util.Log
-import android.widget.Toast
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.GenerateContentResponse
 import com.google.ai.client.generativeai.type.content
@@ -16,7 +15,17 @@ class GeminiRunner {
 
         suspend fun getPackages(destinationName: String?): String {
             val prompt =
-                "data class Destination2(val name: String, val imageResId: Int, val price: String) this is my data class, I want data in this format, leave imageResId for all the different packages available for location $destinationName, give me only the package name and prices as a json object no other text also price should be in INR, give me just the json and no other text"
+                """
+                    data class Destination2 (
+                        val name: String, 
+                        val imageResId: Int, 
+                        val price: String
+                   ) 
+                   this is my data class, 
+                   I want data in this format, 
+                   leave imageResId for all the different packages available for location $destinationName, 
+                   give me only the package name and prices as a json object no other text also price should be in INR, 
+                """.trimMargin()
 
             val promptContent = content {
                 text(prompt)
@@ -31,7 +40,7 @@ class GeminiRunner {
             }
         }
 
-        suspend fun getTravelPlan(destinationName: String?, packageName: String?): String {
+        suspend fun getTravelPlan(destinationName: String?, packageName: String?, startingPlace: String): String {
             val prompt: String = """
                 data class DayPlan(
                     val day: String,
@@ -53,7 +62,7 @@ class GeminiRunner {
                     val menuDescription: String
                 )
                 
-                This is the dayplan format, give me day wise plans of $packageName in $destinationName, for attribute day, the value should be in the format Day <number>: <place-name-on-that-day>, if something is not required just give an empty string for that as value, ie give me an array of dayplan objects in json format, give me only the json data and no extra text
+                This is the dayplan format, give me day wise plans of $packageName in $destinationName $startingPlace, for attribute day, the value should be in the format Day <number>: <place-name-on-that-day>, if something is not required just give an empty string for that as value, ie give me an array of dayplan objects in json format, give me only the json data and no extra text
             """.trimIndent()
 
             val promptContent = content {

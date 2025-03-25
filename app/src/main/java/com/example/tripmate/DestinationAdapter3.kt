@@ -12,7 +12,11 @@ import com.bumptech.glide.Glide
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
-class DestinationAdapter3(private val destinations: List<Destination3>, private val destinationName: String?) :
+class DestinationAdapter3(
+    private val destinations: List<Destination3>,
+    private val destinationName: String?,
+    private val startingPlaceName: String?
+) :
     RecyclerView.Adapter<DestinationAdapter3.DestinationViewHolder3>() {
     private val BASE_URL = "https://www.googleapis.com/"
     private val API_KEY = "AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE"
@@ -69,6 +73,9 @@ class DestinationAdapter3(private val destinations: List<Destination3>, private 
                                 putExtra("packagePrice", destination.price)
                                 putExtra("packageImageUrl", imageUrls[0])
                                 putExtra("destinationName", destinationName)
+                                if (startingPlaceName != null) {
+                                    putExtra("startingPlaceName", startingPlaceName)
+                                }
                             }
                             context.startActivity(intent)
                         }

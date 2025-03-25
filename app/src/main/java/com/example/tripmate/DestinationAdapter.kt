@@ -36,7 +36,6 @@ class DestinationAdapter(private val destinations: List<Destination>) :
             val context = holder.itemView.context
             val intent = Intent(context, ExclusiveDealsActivity::class.java).apply {
                 putExtra("destinationName", destination.name)
-                putExtra("destinationImageRes", destination.imageRes)
             }
             context.startActivity(intent)
         }

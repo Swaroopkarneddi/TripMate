@@ -1,21 +1,18 @@
 package com.example.tripmate
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.ai.client.generativeai.GenerativeModel
-import com.google.ai.client.generativeai.type.GenerateContentResponse
-import com.google.ai.client.generativeai.type.content
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
 
 class ExclusiveDealsActivity : AppCompatActivity() {
     private var packages: List<Package> = emptyList()
+    private lateinit var journeyTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +21,11 @@ class ExclusiveDealsActivity : AppCompatActivity() {
         // Find the RecyclerView from the layout
         val destinationRecyclerView: RecyclerView = findViewById(R.id.destinationRecyclerView)
 
-        val destinationName = intent.getStringExtra("destinationName")
-        val destinationImageRes = intent.getIntExtra("destinationImageRes", 0)
+        val destinationName: String? = intent.getStringExtra("destinationName")
+        val startingPlaceName: String? = intent.getStringExtra("startingPlaceName")
+
+        journeyTextView = findViewById(R.id.journeyDetails)
+        journeyTextView.text = if (startingPlaceName != null) "$startingPlaceName -> $destinationName" else "$destinationName"
 
         lifecycleScope.launch {
             var packageList = GeminiRunner.getPackages(destinationName)
@@ -45,7 +45,7 @@ class ExclusiveDealsActivity : AppCompatActivity() {
             }
 
             // Create and set the adapter
-            val adapter = DestinationAdapter3(destinations, destinationName)
+            val adapter = DestinationAdapter3(destinations, destinationName, startingPlaceName)
             destinationRecyclerView.adapter = adapter
         }
     }

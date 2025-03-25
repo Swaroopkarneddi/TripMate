@@ -1,13 +1,10 @@
 package com.example.tripmate
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -33,6 +30,7 @@ class TravelPlan : AppCompatActivity() {
         val packageName: String? = intent.getStringExtra("packageName")
         val destinationName: String? = intent.getStringExtra("destinationName")
         val packageImageUrl: String? = intent.getStringExtra("packageImageUrl")
+        val startingPlaceName: String? = intent.getStringExtra("startingPlaceName")
 
         packageImage = findViewById(R.id.headerImage)
         Glide.with(this)
@@ -43,7 +41,7 @@ class TravelPlan : AppCompatActivity() {
         travelPackageName.text = "$destinationName: $packageName"
 
         lifecycleScope.launch {
-            var dayWisePlan: String = GeminiRunner.getTravelPlan(destinationName, packageName)
+            var dayWisePlan: String = GeminiRunner.getTravelPlan(destinationName, packageName, if (startingPlaceName != null) "starting from $startingPlaceName" else "")
             dayWisePlan = dayWisePlan.substring(7, dayWisePlan.length - 4)
 
             val listType = object : TypeToken<List<DayPlan>>() {}.type
