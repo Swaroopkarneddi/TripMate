@@ -1,6 +1,8 @@
 package com.example.tripmate
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
@@ -19,6 +22,8 @@ class TravelPlan : AppCompatActivity() {
 
     private lateinit var travelPackageName: TextView
 
+    private lateinit var packageImage: ImageView
+
     private var dayPlans: MutableList<DayPlan> = mutableListOf<DayPlan>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +32,12 @@ class TravelPlan : AppCompatActivity() {
 
         val packageName: String? = intent.getStringExtra("packageName")
         val destinationName: String? = intent.getStringExtra("destinationName")
+        val packageImageUrl: String? = intent.getStringExtra("packageImageUrl")
+
+        packageImage = findViewById(R.id.headerImage)
+        Glide.with(this)
+            .load(packageImageUrl)
+            .into(packageImage)
 
         travelPackageName = findViewById(R.id.travelTitle)
         travelPackageName.text = "$destinationName: $packageName"
