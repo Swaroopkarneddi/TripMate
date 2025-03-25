@@ -25,6 +25,7 @@ class GeminiRunner {
                    I want data in this format, 
                    leave imageResId for all the different packages available for location $destinationName, 
                    give me only the package name and prices as a json object no other text also price should be in INR, 
+                   give me only the json data and no extra text
                 """.trimMargin()
 
             val promptContent = content {
