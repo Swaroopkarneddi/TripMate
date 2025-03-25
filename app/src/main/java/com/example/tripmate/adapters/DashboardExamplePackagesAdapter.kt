@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tripmate.dataClasses.ExamplePackage
+import com.example.tripmate.R
+import com.example.tripmate.activities.TravelPlan
 
-class DestinationAdapter2(private val destinations: List<Destination2>) :
-    RecyclerView.Adapter<DestinationAdapter2.DestinationViewHolder2>() {
+class DashboardExamplePackagesAdapter(private val destinations: List<ExamplePackage>) :
+    RecyclerView.Adapter<DashboardExamplePackagesAdapter.DestinationViewHolder2>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder2 {
         val view = LayoutInflater.from(parent.context)

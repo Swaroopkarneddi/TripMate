@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.activities
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -8,6 +8,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.tripmate.dataClasses.DayPlan
+import com.example.tripmate.adapters.DayPlanAdapter
+import com.example.tripmate.utility.GeminiRunner
+import com.example.tripmate.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
@@ -41,7 +45,11 @@ class TravelPlan : AppCompatActivity() {
         travelPackageName.text = "$destinationName: $packageName"
 
         lifecycleScope.launch {
-            var dayWisePlan: String = GeminiRunner.getTravelPlan(destinationName, packageName, if (startingPlaceName != null) "starting from $startingPlaceName" else "")
+            var dayWisePlan: String = GeminiRunner.getTravelPlan(
+                destinationName,
+                packageName,
+                if (startingPlaceName != null) "starting from $startingPlaceName" else ""
+            )
             dayWisePlan = dayWisePlan.substring(7, dayWisePlan.length - 4)
 
             val listType = object : TypeToken<List<DayPlan>>() {}.type

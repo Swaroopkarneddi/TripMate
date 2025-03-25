@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.dataClasses
 
 data class DayPlan(
     val day: String,

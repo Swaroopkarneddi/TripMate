@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.activities
 
 import android.os.Bundle
 import android.widget.TextView
@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tripmate.dataClasses.PackageElement
+import com.example.tripmate.adapters.PackagesAdapter
+import com.example.tripmate.utility.GeminiRunner
+import com.example.tripmate.dataClasses.Package
+import com.example.tripmate.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
@@ -39,13 +44,13 @@ class ExclusiveDealsActivity : AppCompatActivity() {
             destinationRecyclerView.layoutManager = gridLayoutManager
 
             // Sample data (Replace these with actual destination data)
-            val destinations: MutableList<Destination3> = mutableListOf<Destination3>()
+            val destinations: MutableList<PackageElement> = mutableListOf<PackageElement>()
             for (package1 in packages) {
-                destinations.add(Destination3(package1.name, R.drawable.kerala, package1.price))
+                destinations.add(PackageElement(package1.name, R.drawable.kerala, package1.price))
             }
 
             // Create and set the adapter
-            val adapter = DestinationAdapter3(destinations, destinationName, startingPlaceName)
+            val adapter = PackagesAdapter(destinations, destinationName, startingPlaceName)
             destinationRecyclerView.adapter = adapter
         }
     }

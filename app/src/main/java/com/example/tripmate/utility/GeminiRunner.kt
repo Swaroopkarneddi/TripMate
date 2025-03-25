@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.utility
 
 import android.util.Log
 import com.google.ai.client.generativeai.GenerativeModel

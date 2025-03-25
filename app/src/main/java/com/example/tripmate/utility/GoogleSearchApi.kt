@@ -1,5 +1,6 @@
-package com.example.tripmate
+package com.example.tripmate.utility
 
+import com.example.tripmate.dataClasses.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

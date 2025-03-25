@@ -14,13 +14,13 @@
         android:theme="@style/Theme.TripMate"
         tools:targetApi="31">
         <activity
-            android:name=".ExclusiveDealsActivity"
+            android:name=".activities.ExclusiveDealsActivity"
             android:exported="false" />
         <activity
-            android:name=".TravelPlan"
+            android:name=".activities.TravelPlan"
             android:exported="true"></activity>
         <activity
-            android:name=".Dashbord"
+            android:name=".activities.Dashboard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

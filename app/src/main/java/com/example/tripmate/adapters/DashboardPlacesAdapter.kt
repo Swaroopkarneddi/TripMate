@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,9 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.tripmate.dataClasses.DashboardPlace
+import com.example.tripmate.R
+import com.example.tripmate.activities.ExclusiveDealsActivity
 
-class DestinationAdapter(private val destinations: List<Destination>) :
-    RecyclerView.Adapter<DestinationAdapter.ViewHolder>() {
+class DashboardPlacesAdapter(private val destinations: List<DashboardPlace>) :
+    RecyclerView.Adapter<DashboardPlacesAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.destinationImage)

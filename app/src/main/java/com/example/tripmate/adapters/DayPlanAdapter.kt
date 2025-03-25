@@ -1,10 +1,12 @@
-package com.example.tripmate
+package com.example.tripmate.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tripmate.dataClasses.DayPlan
+import com.example.tripmate.R
 
 class DayPlanAdapter(private val dayPlans: List<DayPlan>) : RecyclerView.Adapter<DayPlanAdapter.DayPlanViewHolder>() {
 

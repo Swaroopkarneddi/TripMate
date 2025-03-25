@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,15 +9,20 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.tripmate.dataClasses.PackageElement
+import com.example.tripmate.utility.GoogleSearchApi
+import com.example.tripmate.R
+import com.example.tripmate.dataClasses.SearchResponse
+import com.example.tripmate.activities.TravelPlan
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
-class DestinationAdapter3(
-    private val destinations: List<Destination3>,
+class PackagesAdapter(
+    private val destinations: List<PackageElement>,
     private val destinationName: String?,
     private val startingPlaceName: String?
 ) :
-    RecyclerView.Adapter<DestinationAdapter3.DestinationViewHolder3>() {
+    RecyclerView.Adapter<PackagesAdapter.DestinationViewHolder3>() {
     private val BASE_URL = "https://www.googleapis.com/"
     private val API_KEY = "AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE"
     private val CX = "564bddb7bc8ef441d"
@@ -31,14 +36,14 @@ class DestinationAdapter3(
 
     override fun onBindViewHolder(holder: DestinationViewHolder3, position: Int) {
         // Get the destination for the current position
-        val destination: Destination3 = destinations[position]
+        val destination: PackageElement = destinations[position]
 
         // Set the destination name, image, and price in the respective views
         fetchImages(destination, destinationName, holder)
     }
 
     private fun fetchImages(
-        destination: Destination3,
+        destination: PackageElement,
         destinationName: String?,
         holder: DestinationViewHolder3
     ) {

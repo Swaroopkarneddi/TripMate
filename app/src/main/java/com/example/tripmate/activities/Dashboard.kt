@@ -1,4 +1,4 @@
-package com.example.tripmate
+package com.example.tripmate.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tripmate.dataClasses.DashboardPlace
+import com.example.tripmate.dataClasses.ExamplePackage
+import com.example.tripmate.adapters.DashboardPlacesAdapter
+import com.example.tripmate.adapters.DashboardExamplePackagesAdapter
 import com.example.tripmate.R
 
-class Dashbord : AppCompatActivity() {
+class Dashboard : AppCompatActivity() {
     private lateinit var startingPlaceEditText: EditText
     private lateinit var destinationPlaceEditText: EditText
     private lateinit var searchButton: Button
@@ -44,44 +48,47 @@ class Dashbord : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val destinations = listOf(
-            Destination("Kerala", R.drawable.kerala),
-            Destination("Dubai", R.drawable.dubai),
-            Destination("Kashmir", R.drawable.kerala),
-            Destination("Paris", R.drawable.dubai),Destination("Meghalaya", R.drawable.kerala),
-            Destination("Venice", R.drawable.dubai),Destination("Coorg", R.drawable.kerala),
-            Destination("Hyderabad", R.drawable.dubai),Destination("Darjeeling", R.drawable.kerala),
-            Destination("Delhi", R.drawable.dubai),
-            Destination("Bankok", R.drawable.kashmir)
+            DashboardPlace("Kerala", R.drawable.kerala),
+            DashboardPlace("Dubai", R.drawable.dubai),
+            DashboardPlace("Kashmir", R.drawable.kerala),
+            DashboardPlace("Paris", R.drawable.dubai),
+            DashboardPlace("Meghalaya", R.drawable.kerala),
+            DashboardPlace("Venice", R.drawable.dubai),
+            DashboardPlace("Coorg", R.drawable.kerala),
+            DashboardPlace("Hyderabad", R.drawable.dubai),
+            DashboardPlace("Darjeeling", R.drawable.kerala),
+            DashboardPlace("Delhi", R.drawable.dubai),
+            DashboardPlace("Bankok", R.drawable.kashmir)
         )
 
-        recyclerView.adapter = DestinationAdapter(destinations)
+        recyclerView.adapter = DashboardPlacesAdapter(destinations)
 
         val recyclerView2 = findViewById<RecyclerView>(R.id.recyclerViewDestinations2)
         recyclerView2.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val destinations2 = listOf(
-            Destination("Kerala", R.drawable.kerala),
-            Destination("Dubai", R.drawable.dubai),
-            Destination("Kashmir", R.drawable.kerala),
-            Destination("Paris", R.drawable.dubai),Destination("Coorg", R.drawable.kerala),
-            Destination("Venice", R.drawable.dubai),Destination("Darjeeling", R.drawable.kerala),
-            Destination("Hyderabad", R.drawable.dubai),Destination("Meghalaya", R.drawable.kerala),
-            Destination("Delhi", R.drawable.dubai),
-            Destination("Bankok", R.drawable.kashmir)
+            DashboardPlace("Kerala", R.drawable.kerala),
+            DashboardPlace("Dubai", R.drawable.dubai),
+            DashboardPlace("Kashmir", R.drawable.kerala),
+            DashboardPlace("Paris", R.drawable.dubai), DashboardPlace("Coorg", R.drawable.kerala),
+            DashboardPlace("Venice", R.drawable.dubai), DashboardPlace("Darjeeling", R.drawable.kerala),
+            DashboardPlace("Hyderabad", R.drawable.dubai), DashboardPlace("Meghalaya", R.drawable.kerala),
+            DashboardPlace("Delhi", R.drawable.dubai),
+            DashboardPlace("Bankok", R.drawable.kashmir)
         )
         val recyclerView3: RecyclerView = findViewById(R.id.recyclerViewExclusiveDeals)
 
 
         val exclusiveDeals = listOf(
-            Destination2("Bali", R.drawable.kerala, "₹39,900"),
-            Destination2("Singapore", R.drawable.dubai, "₹54,500"),
-            Destination2("Japan", R.drawable.kashmir, "₹1,45,000"),
-            Destination2("Australia", R.drawable.kashmir, "₹1,30,000")
+            ExamplePackage("Bali", R.drawable.kerala, "₹39,900"),
+            ExamplePackage("Singapore", R.drawable.dubai, "₹54,500"),
+            ExamplePackage("Japan", R.drawable.kashmir, "₹1,45,000"),
+            ExamplePackage("Australia", R.drawable.kashmir, "₹1,30,000")
         )
         recyclerView3.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView3.adapter = DestinationAdapter2(exclusiveDeals)
+        recyclerView3.adapter = DashboardExamplePackagesAdapter(exclusiveDeals)
 
-        recyclerView2.adapter = DestinationAdapter(destinations2)
+        recyclerView2.adapter = DashboardPlacesAdapter(destinations2)
     }
 }
