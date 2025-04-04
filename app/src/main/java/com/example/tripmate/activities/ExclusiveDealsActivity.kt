@@ -18,19 +18,25 @@ import kotlinx.coroutines.launch
 class ExclusiveDealsActivity : AppCompatActivity() {
     private var packages: List<Package> = emptyList()
     private lateinit var journeyTextView: TextView
+    private lateinit var loadingTextView: TextView // Loading text view
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exclusive_deals)
 
-        // Find the RecyclerView from the layout
         val destinationRecyclerView: RecyclerView = findViewById(R.id.destinationRecyclerView)
+        journeyTextView = findViewById(R.id.journeyDetails)
+        loadingTextView = findViewById(R.id.loadingTextView) // Make sure this is defined in XML
 
         val destinationName: String? = intent.getStringExtra("destinationName")
         val startingPlaceName: String? = intent.getStringExtra("startingPlaceName")
 
-        journeyTextView = findViewById(R.id.journeyDetails)
         journeyTextView.text = if (startingPlaceName != null) "$startingPlaceName -> $destinationName" else "$destinationName"
+
+        // Show loading text
+        loadingTextView.text = "Loading..."
+        loadingTextView.visibility = TextView.VISIBLE
+        destinationRecyclerView.visibility = RecyclerView.GONE
 
         lifecycleScope.launch {
             var packageList = GeminiRunner.getPackages(destinationName)
@@ -39,21 +45,21 @@ class ExclusiveDealsActivity : AppCompatActivity() {
             val listType = object : TypeToken<List<Package>>() {}.type
             packages = Gson().fromJson(packageList, listType)
 
-            // Set GridLayoutManager with 2 columns
-            val gridLayoutManager = GridLayoutManager(this@ExclusiveDealsActivity, 2) // 2 columns in the grid
+            val gridLayoutManager = GridLayoutManager(this@ExclusiveDealsActivity, 2)
             destinationRecyclerView.layoutManager = gridLayoutManager
 
-            // Sample data (Replace these with actual destination data)
-            val destinations: MutableList<PackageElement> = mutableListOf<PackageElement>()
+            val destinations: MutableList<PackageElement> = mutableListOf()
             for (package1 in packages) {
                 destinations.add(PackageElement(package1.name, R.drawable.kerala, package1.price))
             }
 
-            // Create and set the adapter
             val adapter = PackagesAdapter(destinations, destinationName, startingPlaceName)
             destinationRecyclerView.adapter = adapter
+
+            // Hide loading text and show RecyclerView after fetching data
+            loadingTextView.visibility = TextView.GONE
+            destinationRecyclerView.visibility = RecyclerView.VISIBLE
         }
     }
-
-
 }
+

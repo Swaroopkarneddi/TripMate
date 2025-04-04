@@ -20,12 +20,11 @@ class TravelPlan : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DayPlanAdapter
-
     private lateinit var travelPackageName: TextView
-
     private lateinit var packageImage: ImageView
+    private lateinit var loadingTextView: TextView // Loading text
 
-    private var dayPlans: MutableList<DayPlan> = mutableListOf<DayPlan>()
+    private var dayPlans: MutableList<DayPlan> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +41,16 @@ class TravelPlan : AppCompatActivity() {
             .into(packageImage)
 
         travelPackageName = findViewById(R.id.travelTitle)
+        loadingTextView = findViewById(R.id.loadingTextView) // Make sure to add this in XML
+
         travelPackageName.text = "$destinationName: $packageName"
+
+        recyclerView = findViewById(R.id.recyclerView)
+
+        // Show loading text and hide RecyclerView
+        loadingTextView.text = "Loading..."
+        loadingTextView.visibility = TextView.VISIBLE
+        recyclerView.visibility = RecyclerView.GONE
 
         lifecycleScope.launch {
             var dayWisePlan: String = GeminiRunner.getTravelPlan(
@@ -55,10 +63,13 @@ class TravelPlan : AppCompatActivity() {
             val listType = object : TypeToken<List<DayPlan>>() {}.type
             dayPlans = Gson().fromJson(dayWisePlan, listType)
 
-            recyclerView = findViewById(R.id.recyclerView)
             recyclerView.layoutManager = LinearLayoutManager(this@TravelPlan)
             adapter = DayPlanAdapter(dayPlans)
             recyclerView.adapter = adapter
+
+            // Hide loading text and show RecyclerView after fetching data
+            loadingTextView.visibility = TextView.GONE
+            recyclerView.visibility = RecyclerView.VISIBLE
         }
     }
 }

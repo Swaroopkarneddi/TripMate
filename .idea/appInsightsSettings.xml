@@ -6,6 +6,14 @@
         <entry key="Firebase Crashlytics">
           <value>
             <InsightsFilterSettings>
+              <option name="connection">
+                <ConnectionSetting>
+                  <option name="appId" value="com.example.tripmate" />
+                  <option name="mobileSdkAppId" value="1:354716364555:android:185c4d1df3d6f9b7d67c0e" />
+                  <option name="projectId" value="tripmate-ko302" />
+                  <option name="projectNumber" value="354716364555" />
+                </ConnectionSetting>
+              </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
               <option name="timeIntervalDays" value="THIRTY_DAYS" />
               <option name="visibilityType" value="ALL" />

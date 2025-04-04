@@ -132,10 +132,13 @@
             android:layout_height="wrap_content"
             android:text="SEARCH"
             android:textSize="20sp"
-            android:background="@drawable/gradient_button"
             android:textColor="@color/white"
             android:padding="16dp"
-            android:layout_marginBottom="32dp" />
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/gradient_button"
+            />
+
 
         <!-- Best Selling Destinations -->
         <LinearLayout

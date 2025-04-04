@@ -17,6 +17,9 @@
         android:textAlignment="center"
         />
 
+
+
+
     <!-- RecyclerView for displaying destinations -->
     <TextView
         android:id="@+id/journeyDetails"
@@ -26,6 +29,14 @@
         android:textAlignment="center"
         android:textSize="16sp"
         />
+    <TextView
+        android:id="@+id/loadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textSize="18sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/destinationRecyclerView"

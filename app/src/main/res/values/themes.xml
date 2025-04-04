@@ -7,3 +7,43 @@
 
     <style name="Theme.TripMate" parent="Base.Theme.TripMate" />
 </resources>
+<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    &lt;!&ndash; Base application theme &ndash;&gt;-->
+<!--    <style name="Base.Theme.TripMate" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        <item name="colorPrimary">@color/primary</item>-->
+<!--        <item name="colorPrimaryVariant">@color/primary_variant</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+
+<!--        <item name="colorSecondary">@color/secondary</item>-->
+<!--        <item name="colorSecondaryVariant">@color/secondary_variant</item>-->
+<!--        <item name="colorOnSecondary">@color/white</item>-->
+
+<!--&lt;!&ndash;        <item name="colorBackground">@color/background</item>&ndash;&gt;-->
+<!--        <item name="colorSurface">@color/surface</item>-->
+<!--        <item name="colorOnSurface">@color/black</item>-->
+
+<!--        <item name="android:textColorPrimary">@color/black</item>-->
+<!--        <item name="android:textColorSecondary">@color/gray</item>-->
+
+<!--        &lt;!&ndash; Button Styling &ndash;&gt;-->
+<!--        <item name="android:buttonStyle">@style/ButtonStyle</item>-->
+
+<!--        &lt;!&ndash; MaterialCardView Style &ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="materialCardViewStyle">@style/RoundedCard</item>&ndash;&gt;-->
+<!--    </style>-->
+
+<!--    <style name="Theme.TripMate" parent="Base.Theme.TripMate" />-->
+
+<!--    &lt;!&ndash; Button Customization &ndash;&gt;-->
+<!--    <style name="ButtonStyle" parent="Widget.Material3.Button">-->
+<!--        <item name="android:backgroundTint">@color/primary</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; Fixed Rounded Card &ndash;&gt;-->
+<!--&lt;!&ndash;    <style name="RoundedCard" parent="Widget.Material3.Card">&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="cardCornerRadius">16dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="cardElevation">6dp</item>&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--</resources>-->
+
