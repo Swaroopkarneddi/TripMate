@@ -15,6 +15,19 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/animation_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:lottie_fileName="Animation_loading.json"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            app:lottie_loop="true" />-->
+
+
+
+
+
         <!-- Title -->
         <TextView
             android:id="@+id/title"

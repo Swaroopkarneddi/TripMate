@@ -37,6 +37,10 @@ android {
     }
 }
 
+//repositories {
+//    maven(url = "https://jitpack.io")
+//}
+
 dependencies {
 // Core AndroidX Libraries
     implementation("androidx.core:core-ktx:1.13.1")
@@ -72,4 +76,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
+//    //animatedsvg
+//    implementation("com.github.LottieFiles:dotlottie-android:0.0.3")
+//    implementation("com.github.LottieFiles:dotlottie-android:0.5.0")
+    implementation("com.airbnb.android:lottie:6.4.0")
+
+
 }

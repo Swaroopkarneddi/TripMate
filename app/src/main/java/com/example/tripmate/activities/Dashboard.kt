@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.tripmate.dataClasses.DashboardPlace
 import com.example.tripmate.dataClasses.ExamplePackage
 import com.example.tripmate.adapters.DashboardPlacesAdapter
@@ -22,6 +23,9 @@ class Dashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashbord)
+//        val animationView = findViewById<LottieAnimationView>(R.id.animation_view)
+////        animationView.playAnimation()
+
 
         destinationPlaceEditText = findViewById(R.id.destinationPlaceEditText)
         startingPlaceEditText = findViewById(R.id.startingPlaceEditText)

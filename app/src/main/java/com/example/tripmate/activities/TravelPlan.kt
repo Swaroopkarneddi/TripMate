@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.example.tripmate.dataClasses.DayPlan
 import com.example.tripmate.adapters.DayPlanAdapter
@@ -22,7 +23,8 @@ class TravelPlan : AppCompatActivity() {
     private lateinit var adapter: DayPlanAdapter
     private lateinit var travelPackageName: TextView
     private lateinit var packageImage: ImageView
-    private lateinit var loadingTextView: TextView // Loading text
+//    private lateinit var loadingTextView: TextView // Loading text
+private lateinit var loadingAnimationView: LottieAnimationView
 
     private var dayPlans: MutableList<DayPlan> = mutableListOf()
 
@@ -41,15 +43,19 @@ class TravelPlan : AppCompatActivity() {
             .into(packageImage)
 
         travelPackageName = findViewById(R.id.travelTitle)
-        loadingTextView = findViewById(R.id.loadingTextView) // Make sure to add this in XML
+//        loadingTextView = findViewById(R.id.loadingTextView)
+
 
         travelPackageName.text = "$destinationName: $packageName"
 
         recyclerView = findViewById(R.id.recyclerView)
 
         // Show loading text and hide RecyclerView
-        loadingTextView.text = "Loading..."
-        loadingTextView.visibility = TextView.VISIBLE
+//        loadingTextView.text = "Loading..."
+//        loadingTextView.visibility = TextView.VISIBLE
+        loadingAnimationView = findViewById(R.id.loadingAnimationView)
+        loadingAnimationView.visibility = LottieAnimationView.VISIBLE
+
         recyclerView.visibility = RecyclerView.GONE
 
         lifecycleScope.launch {
@@ -68,7 +74,9 @@ class TravelPlan : AppCompatActivity() {
             recyclerView.adapter = adapter
 
             // Hide loading text and show RecyclerView after fetching data
-            loadingTextView.visibility = TextView.GONE
+//            loadingTextView.visibility = TextView.GONE
+            loadingAnimationView.visibility = LottieAnimationView.GONE
+
             recyclerView.visibility = RecyclerView.VISIBLE
         }
     }
