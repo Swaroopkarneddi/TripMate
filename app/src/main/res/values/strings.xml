@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TripMate</string>
+    <string name="signup"><b><u>Signup</u></b></string>
+    <string name="login"><u><b>Login</b></u></string>
 </resources>

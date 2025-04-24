@@ -7,13 +7,21 @@ import com.google.ai.client.generativeai.type.content
 
 class GeminiRunner {
     companion object {
-        private val GMN_KEY: String = "AIzaSyCjAivvfgZa2_UG5Vs3P_sAdxtUmllQE8U"
-        private val generativeModel: GenerativeModel = GenerativeModel(
-            modelName = "gemini-1.5-pro",
-            apiKey = GMN_KEY
-        )
+        private val GMN_KEYS: List<String> = listOf("AIzaSyDDIpldmK2ASTjgZbYuLsdn0JSTSaBYMS0", "AIzaSyAMuJfKwuKDBMl3-hVJI1K5suOBljN0XPs", "AIzaSyBvOKfmXHUqrmwzS7uTSNQUNxUFfX3KMtk", "AIzaSyCLB9PEjNT9Rqzo7805OqL4ddRJowNxd9k", "AIzaSyCjAivvfgZa2_UG5Vs3P_sAdxtUmllQE8U")
+        private lateinit var generativeModel: GenerativeModel
+
+        private var geminiKeyIndex = 0
+
+        private fun incrementGeminiKeyIndex() {
+            geminiKeyIndex = (geminiKeyIndex + 1) % GMN_KEYS.size
+        }
 
         suspend fun getPackages(destinationName: String?): String {
+            incrementGeminiKeyIndex()
+            generativeModel = GenerativeModel(
+                modelName = "gemini-1.5-pro",
+                apiKey = GMN_KEYS[geminiKeyIndex]
+            )
             val prompt =
                 """
                     data class Destination2 (

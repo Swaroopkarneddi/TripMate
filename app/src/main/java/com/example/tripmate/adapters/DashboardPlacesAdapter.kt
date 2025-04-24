@@ -21,8 +21,26 @@ class DashboardPlacesAdapter(private val destinations: List<DashboardPlace>) :
     RecyclerView.Adapter<DashboardPlacesAdapter.ViewHolder>() {
 
     private val BASE_URL = "https://www.googleapis.com/"
-    private val API_KEY = "AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE"
-    private val CX = "564bddb7bc8ef441d"
+
+    companion object {
+        private val API_KEYS: List<String> = listOf("AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE", "AIzaSyDc1ZpOd3DyPeqHSb2oADA5zgKowM-3dsY", "AIzaSyA_Ae7yOUOaSgvr2TH6c6gGuJHr1xjiJdU")
+        private val CX: List<String> = listOf("564bddb7bc8ef441d", "230822a88007d4cdc")
+
+        var apiKeyIndex = 1
+        var cxIndex = 1
+
+        fun getApiKey(): String {
+            val apiKey = API_KEYS[apiKeyIndex]
+            apiKeyIndex = (apiKeyIndex + 1) % API_KEYS.size
+            return apiKey
+        }
+
+        fun getCx(): String {
+            val cx = CX[cxIndex]
+            cxIndex = (cxIndex + 1) % CX.size
+            return cx
+        }
+    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.destinationImage)
@@ -57,7 +75,7 @@ class DashboardPlacesAdapter(private val destinations: List<DashboardPlace>) :
             .build()
 
         val api = retrofit.create(GoogleSearchApi::class.java)
-        val call = api.getImages(query, CX, API_KEY)
+        val call = api.getImages(query, getCx(), getApiKey())
 
         call.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(call: Call<SearchResponse>, response: Response<SearchResponse>) {
