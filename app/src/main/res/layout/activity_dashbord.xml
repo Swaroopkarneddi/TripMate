@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context=".activities.Dashboard">
 
     <LinearLayout
@@ -14,19 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
-
-<!--        <com.airbnb.lottie.LottieAnimationView-->
-<!--            android:id="@+id/animation_view"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:lottie_fileName="Animation_loading.json"-->
-<!--            app:lottie_autoPlay="true"-->
-<!--            app:lottie_loop="true" />-->
-
-
-
-
 
         <!-- Title -->
         <TextView
@@ -78,7 +65,7 @@
                     android:text="Starting From"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="4dp"
                     />
 
@@ -89,6 +76,7 @@
                     android:ems="10"
                     android:textSize="16sp"
                     android:inputType="text"
+                    android:textColor="@color/black"
                     android:hint="Place name..." />
             </LinearLayout>
         </LinearLayout>
@@ -122,7 +110,7 @@
                     android:text="Travelling To"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:textColor="@color/gray"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="4dp"/>
 
                 <EditText
@@ -132,6 +120,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:textSize="16sp"
+                    android:textColor="@color/black"
                     android:hint="Place name..." />
             </LinearLayout>
         </LinearLayout>
@@ -158,21 +147,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:text="Best Selling Destinations"
-                android:textStyle="bold"
                 android:textSize="22sp"
-                android:layout_marginBottom="16dp" />
+                android:textStyle="bold" />
             <!-- Images of Destinations -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewDestinations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="16dp"
-                android:overScrollMode="never"/>
+                android:orientation="horizontal"
+                android:overScrollMode="never" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

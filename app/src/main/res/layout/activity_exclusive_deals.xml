@@ -49,7 +49,9 @@
         app:layout_constraintTop_toBottomOf="@id/travelTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/destinationRecyclerView"

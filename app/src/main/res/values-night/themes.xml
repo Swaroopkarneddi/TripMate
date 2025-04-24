@@ -1,7 +1,17 @@
+<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="Base.Theme.TripMate" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your dark theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_dark_primary</item> &ndash;&gt;-->
+<!--    </style>-->
+<!--</resources>-->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TripMate" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.TripMate" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Dark Theme Overrides -->
+        <item name="colorPrimary">#311B92</item>
+        <item name="colorOnPrimary">#311B92</item>
+        <item name="android:windowBackground">#0D0D0D</item>
+        <item name="android:textColor">#FFD600</item>
     </style>
 </resources>
