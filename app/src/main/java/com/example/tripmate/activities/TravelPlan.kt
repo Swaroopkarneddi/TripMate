@@ -1,6 +1,8 @@
 package com.example.tripmate.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
+import com.example.tripmate.BookingActivity
 import com.example.tripmate.dataClasses.DayPlan
 import com.example.tripmate.adapters.DayPlanAdapter
 import com.example.tripmate.utility.GeminiRunner
@@ -79,5 +82,14 @@ private lateinit var loadingAnimationView: LottieAnimationView
 
             recyclerView.visibility = RecyclerView.VISIBLE
         }
+        val bookNowButton = findViewById<Button>(R.id.bookNowButton)
+
+        bookNowButton.setOnClickListener {
+            val intent = Intent(this, BookingActivity::class.java)
+            intent.putExtra("destinationName", destinationName)
+            intent.putExtra("price", 50000.0) // replace with actual price if available
+            startActivity(intent)
+        }
+
     }
 }
