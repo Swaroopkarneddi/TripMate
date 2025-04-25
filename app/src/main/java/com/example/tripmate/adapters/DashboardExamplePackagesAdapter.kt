@@ -23,8 +23,8 @@ class DashboardExamplePackagesAdapter(private val destinations: List<ExamplePack
     private val BASE_URL = "https://www.googleapis.com/"
 
     companion object {
-        private val API_KEYS: List<String> = listOf("AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE", "AIzaSyDc1ZpOd3DyPeqHSb2oADA5zgKowM-3dsY", "AIzaSyA_Ae7yOUOaSgvr2TH6c6gGuJHr1xjiJdU")
-        private val CX: List<String> = listOf("564bddb7bc8ef441d", "230822a88007d4cdc")
+        private val API_KEYS: List<String> = listOf("AIzaSyBsTmd529pk02fq6VDpPMhGh3YTZQk7lAg","AIzaSyCRmlqIjS-ArWdCfPGn4TTI3F2S6SnGHRE","AIzaSyD43c5Yi5ErYc8ZR9wAx0cjiZBQ2hM2uT0","AIzaSyAK-cNJhIRlJ9S-lXPrtqUDvKF5C39LFnE", "AIzaSyDc1ZpOd3DyPeqHSb2oADA5zgKowM-3dsY", "AIzaSyA_Ae7yOUOaSgvr2TH6c6gGuJHr1xjiJdU")
+        private val CX: List<String> = listOf("62d9ac354a8994f28","f348478e6f2654566","b5e9d1bd94b554a6d","d18bc3ac32e234e99","564bddb7bc8ef441d", "230822a88007d4cdc")
 
         var apiKeyIndex = 0
         var cxIndex = 0
