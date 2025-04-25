@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.firebase.database)
     kapt("com.github.bumptech.glide:compiler:4.16.0")
 
     // Testing Dependencies
@@ -86,6 +87,8 @@ dependencies {
 //    implementation("com.github.LottieFiles:dotlottie-android:0.0.3")
 //    implementation("com.github.LottieFiles:dotlottie-android:0.5.0")
     implementation("com.airbnb.android:lottie:6.4.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+    implementation("com.google.firebase:firebase-database-ktx")
 
 
 }

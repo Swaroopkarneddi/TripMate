@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Logout Menu Item -->
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_logout"
+        android:titleTextColor="@color/white"
+        app:showAsAction="ifRoom"
+        />
+
+    <!-- View Bookings Menu Item -->
+    <item
+        android:id="@+id/view_bookings"
+        android:title="View Bookings"
+        android:icon="@drawable/ic_booking"
+        android:titleTextColor="@color/white"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>

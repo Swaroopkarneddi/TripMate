@@ -1,219 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:orientation="vertical"
     android:background="@color/black"
     tools:context=".activities.Dashboard">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        android:title="TripMate"
+        android:titleTextColor="@color/white"
+        android:elevation="4dp"
+       />
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Holiday Packages"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Subtitle -->
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="India and International"
-            android:textSize="18sp"
-            android:textColor="@color/gray"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Starting From -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/rounded_button"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:srcCompat="@drawable/location"
-                android:layout_marginEnd="12dp" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Starting From"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="@color/black"
-                    android:layout_marginBottom="4dp"
-                    />
-
-                <EditText
-                    android:id="@+id/startingPlaceEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textSize="16sp"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:hint="Place name..." />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Travelling To -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/rounded_button"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:srcCompat="@drawable/location"
-                android:layout_marginEnd="12dp" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Travelling To"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="@color/black"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/destinationPlaceEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:hint="Place name..." />
-            </LinearLayout>
-        </LinearLayout>
-
-
-
-        <!-- Search Button -->
-        <Button
-            android:id="@+id/searchButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SEARCH"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:padding="16dp"
-            android:stateListAnimator="@null"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/gradient_button"
-            />
-
-
-        <!-- Best Selling Destinations -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Best Selling Destinations"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-            <!-- Images of Destinations -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewDestinations"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                android:overScrollMode="never" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Book Now @1:Lock your Holiday Pack..."
-                android:textStyle="bold"
-                android:textSize="22sp"
-                android:layout_marginBottom="16dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lock the price of holiday package JUST Rs1 if your unsure about your trip"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/gray"
-                android:layout_marginBottom="4dp"/>
-            <!-- Images of Destinations -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewDestinations2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:overScrollMode="never"/>
-        </LinearLayout>
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="16dp">
+            android:padding="8dp">
 
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Holiday Packages"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="India and International"
+                android:textSize="18sp"
+                android:textColor="@color/gray"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Starting From -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/location"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Starting From"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/startingPlaceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Place name..."
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:inputType="text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Travelling To -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/location"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Travelling To"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/destinationPlaceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Place name..."
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:inputType="text" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Search Button -->
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SEARCH"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:padding="16dp"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/gradient_button" />
+
+            <!-- Best Selling Destinations -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best Selling Destinations"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDestinations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:overScrollMode="never" />
+
+            <!-- Book Now @1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Now @1: Lock your Holiday Pack..."
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lock the price of holiday package JUST Rs1 if you're unsure about your trip"
+                android:textSize="14sp"
+                android:textColor="@color/gray"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDestinations2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never" />
+
+            <!-- Exclusive Deals -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Exclusive Deals"
                 android:textStyle="bold"
                 android:textSize="22sp"
+                android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewExclusiveDeals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:overScrollMode="never"/>
+                android:overScrollMode="never" />
+
         </LinearLayout>
-
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

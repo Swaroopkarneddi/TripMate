@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class BookingActivity : AppCompatActivity() {
 
@@ -14,6 +16,8 @@ class BookingActivity : AppCompatActivity() {
     private lateinit var bookButton: Button
     private lateinit var couponInput: TextInputEditText
     private lateinit var personCountInput: EditText
+
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     private var basePrice: Double = 0.0
     private val validCoupons = mapOf(
@@ -46,7 +50,34 @@ class BookingActivity : AppCompatActivity() {
         discountSwitch.setOnCheckedChangeListener { _, _ -> updateFinalPrice() }
 
         bookButton.setOnClickListener {
-            Toast.makeText(this, "Booking Confirmed!", Toast.LENGTH_SHORT).show()
+            val numPersons = personCountInput.text.toString().toIntOrNull() ?: 1
+            val couponCode = couponInput.text.toString().trim().uppercase()
+            val couponDiscount = validCoupons[couponCode] ?: 0.0
+            val discountFactor = if (discountSwitch.isChecked) 0.9 else 1.0
+
+            val pricePerPerson = basePrice * discountFactor
+            val totalBeforeCoupon = pricePerPerson * numPersons
+            val finalPrice = totalBeforeCoupon * (1 - couponDiscount)
+
+            val bookingData = mapOf(
+                "user" to auth.currentUser?.email!!,
+                "destination" to destinationName,
+                "pricePerPerson" to pricePerPerson,
+                "totalPrice" to finalPrice,
+                "personCount" to numPersons,
+                "couponCode" to couponCode,
+                "discountApplied" to discountSwitch.isChecked
+            )
+
+            val database = FirebaseDatabase.getInstance()
+            val bookingRef = database.getReference("bookings")
+            bookingRef.push().setValue(bookingData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Booking Confirmed and Saved!", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Failed to save booking.", Toast.LENGTH_SHORT).show()
+                }
         }
 
         couponInput.setOnFocusChangeListener { _, _ -> updateFinalPrice() }
